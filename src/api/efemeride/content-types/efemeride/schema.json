@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "efemerides",
+  "info": {
+    "singularName": "efemeride",
+    "pluralName": "efemerides",
+    "displayName": "Efemerides"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Fecha": {
+      "type": "date"
+    },
+    "efemerideDato": {
+      "type": "string"
+    }
+  }
+}

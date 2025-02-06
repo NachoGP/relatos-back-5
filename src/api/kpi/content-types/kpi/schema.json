@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kpis",
+  "info": {
+    "singularName": "kpi",
+    "pluralName": "kpis",
+    "displayName": "Kpi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "integer"
+    }
+  }
+}

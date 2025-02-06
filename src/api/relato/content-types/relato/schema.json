@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relatos",
+  "info": {
+    "singularName": "relato",
+    "pluralName": "relatos",
+    "displayName": "Relato",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "string"
+    },
+    "corrections": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "proposal": {
+      "type": "string"
+    }
+  }
+}

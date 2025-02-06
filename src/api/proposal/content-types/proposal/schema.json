@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "singularName": "proposal",
+    "pluralName": "proposals",
+    "displayName": "Proposal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "propuesta": {
+      "type": "string"
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "escritor": {
+      "type": "string"
+    }
+  }
+}
