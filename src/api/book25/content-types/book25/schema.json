@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "books",
+  "collectionName": "book25s",
   "info": {
-    "singularName": "book",
-    "pluralName": "books",
-    "displayName": "Book",
-    "description": ""
+    "singularName": "book25",
+    "pluralName": "book25s",
+    "displayName": "Book25"
   },
   "options": {
     "draftAndPublish": true
@@ -15,25 +14,24 @@
     "title": {
       "type": "string"
     },
-    "author": {
-      "type": "string"
-    },
     "editorial": {
       "type": "string"
     },
-    "date": {
-      "type": "date"
-    },
     "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
     },
     "propuestopor": {
       "type": "string"

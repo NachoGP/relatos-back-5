@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "randomword_dos",
+  "info": {
+    "singularName": "randomword-do",
+    "pluralName": "randomword-dos",
+    "displayName": "RandomwordDo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "palabra": {
+      "type": "string"
+    }
+  }
+}

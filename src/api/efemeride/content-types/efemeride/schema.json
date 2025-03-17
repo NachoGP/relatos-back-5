@@ -4,18 +4,25 @@
   "info": {
     "singularName": "efemeride",
     "pluralName": "efemerides",
-    "displayName": "Efemerides"
+    "displayName": "Efemerides",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Fecha": {
-      "type": "date"
-    },
     "efemerideDato": {
       "type": "string"
+    },
+    "efemerideDato2": {
+      "type": "string"
+    },
+    "efemerideDato3": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

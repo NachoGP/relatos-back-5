@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposalrandoms",
+  "info": {
+    "singularName": "proposalrandom",
+    "pluralName": "proposalrandoms",
+    "displayName": "proposalrandom"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "genero": {
+      "type": "string"
+    },
+    "personaje": {
+      "type": "string"
+    },
+    "sustantivo": {
+      "type": "string"
+    },
+    "tema": {
+      "type": "string"
+    },
+    "lugar": {
+      "type": "string"
+    }
+  }
+}

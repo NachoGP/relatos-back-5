@@ -403,6 +403,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
 export interface ApiBookBook extends Struct.CollectionTypeSchema {
   collectionName: 'books';
   info: {
+    description: '';
     displayName: 'Book';
     pluralName: 'books';
     singularName: 'book';
@@ -417,9 +418,48 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     editorial: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::book.book'> &
+      Schema.Attribute.Private;
+    propuestopor: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBook25Book25 extends Struct.CollectionTypeSchema {
+  collectionName: 'book25s';
+  info: {
+    displayName: 'Book25';
+    pluralName: 'book25s';
+    singularName: 'book25';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    editorial: Schema.Attribute.String;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::book25.book25'
+    > &
       Schema.Attribute.Private;
     propuestopor: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
@@ -433,6 +473,7 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
 export interface ApiEfemerideEfemeride extends Struct.CollectionTypeSchema {
   collectionName: 'efemerides';
   info: {
+    description: '';
     displayName: 'Efemerides';
     pluralName: 'efemerides';
     singularName: 'efemeride';
@@ -444,8 +485,10 @@ export interface ApiEfemerideEfemeride extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
     efemerideDato: Schema.Attribute.String;
-    Fecha: Schema.Attribute.Date;
+    efemerideDato2: Schema.Attribute.String;
+    efemerideDato3: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -494,6 +537,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiKpiKpi extends Struct.CollectionTypeSchema {
   collectionName: 'kpis';
   info: {
+    description: '';
     displayName: 'Kpi';
     pluralName: 'kpis';
     singularName: 'kpi';
@@ -505,6 +549,7 @@ export interface ApiKpiKpi extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::kpi.kpi'> &
       Schema.Attribute.Private;
@@ -547,6 +592,126 @@ export interface ApiProposalProposal extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProposalrandomProposalrandom
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'proposalrandoms';
+  info: {
+    displayName: 'proposalrandom';
+    pluralName: 'proposalrandoms';
+    singularName: 'proposalrandom';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    genero: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::proposalrandom.proposalrandom'
+    > &
+      Schema.Attribute.Private;
+    lugar: Schema.Attribute.String;
+    personaje: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    sustantivo: Schema.Attribute.String;
+    tema: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRandomwordDoRandomwordDo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'randomword_dos';
+  info: {
+    displayName: 'RandomwordDo';
+    pluralName: 'randomword-dos';
+    singularName: 'randomword-do';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::randomword-do.randomword-do'
+    > &
+      Schema.Attribute.Private;
+    palabra: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRandomwordRandomword extends Struct.CollectionTypeSchema {
+  collectionName: 'randomwords';
+  info: {
+    description: '';
+    displayName: 'randomwordUno';
+    pluralName: 'randomwords';
+    singularName: 'randomword';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::randomword.randomword'
+    > &
+      Schema.Attribute.Private;
+    palabra: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRelatoDetalleRelatoDetalle
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'relato_detalles';
+  info: {
+    displayName: 'relato-detalle';
+    pluralName: 'relato-detalles';
+    singularName: 'relato-detalle';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    id_relato: Schema.Attribute.UID;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::relato-detalle.relato-detalle'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRelatoRelato extends Struct.CollectionTypeSchema {
   collectionName: 'relatos';
   info: {
@@ -567,6 +732,7 @@ export interface ApiRelatoRelato extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     description: Schema.Attribute.String;
+    id_relato: Schema.Attribute.UID;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1121,10 +1287,15 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::author.author': ApiAuthorAuthor;
       'api::book.book': ApiBookBook;
+      'api::book25.book25': ApiBook25Book25;
       'api::efemeride.efemeride': ApiEfemerideEfemeride;
       'api::global.global': ApiGlobalGlobal;
       'api::kpi.kpi': ApiKpiKpi;
       'api::proposal.proposal': ApiProposalProposal;
+      'api::proposalrandom.proposalrandom': ApiProposalrandomProposalrandom;
+      'api::randomword-do.randomword-do': ApiRandomwordDoRandomwordDo;
+      'api::randomword.randomword': ApiRandomwordRandomword;
+      'api::relato-detalle.relato-detalle': ApiRelatoDetalleRelatoDetalle;
       'api::relato.relato': ApiRelatoRelato;
       'api::word.word': ApiWordWord;
       'plugin::content-releases.release': PluginContentReleasesRelease;

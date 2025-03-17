@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "randomwords",
+  "info": {
+    "singularName": "randomword",
+    "pluralName": "randomwords",
+    "displayName": "randomwordUno",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "palabra": {
+      "type": "string"
+    }
+  }
+}
