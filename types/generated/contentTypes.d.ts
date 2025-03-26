@@ -562,6 +562,45 @@ export interface ApiKpiKpi extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLibrarybookLibrarybook extends Struct.CollectionTypeSchema {
+  collectionName: 'librarybooks';
+  info: {
+    description: '';
+    displayName: 'librarybook';
+    pluralName: 'librarybooks';
+    singularName: 'librarybook';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    comments: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    editorial: Schema.Attribute.String;
+    gender: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::librarybook.librarybook'
+    > &
+      Schema.Attribute.Private;
+    origin: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rate: Schema.Attribute.Integer;
+    sinopsis: Schema.Attribute.String;
+    style: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    year: Schema.Attribute.Integer;
+  };
+}
+
 export interface ApiProposalProposal extends Struct.CollectionTypeSchema {
   collectionName: 'proposals';
   info: {
@@ -1291,6 +1330,7 @@ declare module '@strapi/strapi' {
       'api::efemeride.efemeride': ApiEfemerideEfemeride;
       'api::global.global': ApiGlobalGlobal;
       'api::kpi.kpi': ApiKpiKpi;
+      'api::librarybook.librarybook': ApiLibrarybookLibrarybook;
       'api::proposal.proposal': ApiProposalProposal;
       'api::proposalrandom.proposalrandom': ApiProposalrandomProposalrandom;
       'api::randomword-do.randomword-do': ApiRandomwordDoRandomwordDo;
