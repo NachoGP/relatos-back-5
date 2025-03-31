@@ -592,6 +592,7 @@ export interface ApiLibrarybookLibrarybook extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     rate: Schema.Attribute.Integer;
     sinopsis: Schema.Attribute.String;
+    statusread: Schema.Attribute.String;
     style: Schema.Attribute.String;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
