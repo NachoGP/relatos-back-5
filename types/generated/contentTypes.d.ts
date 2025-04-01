@@ -502,6 +502,34 @@ export interface ApiEfemerideEfemeride extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGeneroGenero extends Struct.CollectionTypeSchema {
+  collectionName: 'generos';
+  info: {
+    displayName: 'genero';
+    pluralName: 'generos';
+    singularName: 'genero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    genero: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::genero.genero'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -599,6 +627,59 @@ export interface ApiLibrarybookLibrarybook extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     year: Schema.Attribute.Integer;
+  };
+}
+
+export interface ApiLugarLugar extends Struct.CollectionTypeSchema {
+  collectionName: 'lugars';
+  info: {
+    displayName: 'lugar';
+    pluralName: 'lugars';
+    singularName: 'lugar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::lugar.lugar'> &
+      Schema.Attribute.Private;
+    lugar: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPersonajePersonaje extends Struct.CollectionTypeSchema {
+  collectionName: 'personajes';
+  info: {
+    displayName: 'personaje';
+    pluralName: 'personajes';
+    singularName: 'personaje';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::personaje.personaje'
+    > &
+      Schema.Attribute.Private;
+    personaje: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -782,6 +863,59 @@ export interface ApiRelatoRelato extends Struct.CollectionTypeSchema {
     proposal: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSustantivoSustantivo extends Struct.CollectionTypeSchema {
+  collectionName: 'sustantivos';
+  info: {
+    displayName: 'sustantivo';
+    pluralName: 'sustantivos';
+    singularName: 'sustantivo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sustantivo.sustantivo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sustantivo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTemaTema extends Struct.CollectionTypeSchema {
+  collectionName: 'temas';
+  info: {
+    displayName: 'tema';
+    pluralName: 'temas';
+    singularName: 'tema';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tema.tema'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tema: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1329,15 +1463,20 @@ declare module '@strapi/strapi' {
       'api::book.book': ApiBookBook;
       'api::book25.book25': ApiBook25Book25;
       'api::efemeride.efemeride': ApiEfemerideEfemeride;
+      'api::genero.genero': ApiGeneroGenero;
       'api::global.global': ApiGlobalGlobal;
       'api::kpi.kpi': ApiKpiKpi;
       'api::librarybook.librarybook': ApiLibrarybookLibrarybook;
+      'api::lugar.lugar': ApiLugarLugar;
+      'api::personaje.personaje': ApiPersonajePersonaje;
       'api::proposal.proposal': ApiProposalProposal;
       'api::proposalrandom.proposalrandom': ApiProposalrandomProposalrandom;
       'api::randomword-do.randomword-do': ApiRandomwordDoRandomwordDo;
       'api::randomword.randomword': ApiRandomwordRandomword;
       'api::relato-detalle.relato-detalle': ApiRelatoDetalleRelatoDetalle;
       'api::relato.relato': ApiRelatoRelato;
+      'api::sustantivo.sustantivo': ApiSustantivoSustantivo;
+      'api::tema.tema': ApiTemaTema;
       'api::word.word': ApiWordWord;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

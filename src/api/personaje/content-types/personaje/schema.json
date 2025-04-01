@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personajes",
+  "info": {
+    "singularName": "personaje",
+    "pluralName": "personajes",
+    "displayName": "personaje"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "personaje": {
+      "type": "string"
+    }
+  }
+}

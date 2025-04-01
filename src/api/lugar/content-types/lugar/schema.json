@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lugars",
+  "info": {
+    "singularName": "lugar",
+    "pluralName": "lugars",
+    "displayName": "lugar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lugar": {
+      "type": "string"
+    }
+  }
+}

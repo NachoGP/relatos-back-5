@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sustantivos",
+  "info": {
+    "singularName": "sustantivo",
+    "pluralName": "sustantivos",
+    "displayName": "sustantivo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sustantivo": {
+      "type": "string"
+    }
+  }
+}
