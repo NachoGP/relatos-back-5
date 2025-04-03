@@ -409,7 +409,7 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
     singularName: 'book';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     author: Schema.Attribute.String;
@@ -437,12 +437,13 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
 export interface ApiBook25Book25 extends Struct.CollectionTypeSchema {
   collectionName: 'book25s';
   info: {
+    description: '';
     displayName: 'Book25';
     pluralName: 'book25s';
     singularName: 'book25';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     author: Schema.Attribute.String;
@@ -479,7 +480,7 @@ export interface ApiEfemerideEfemeride extends Struct.CollectionTypeSchema {
     singularName: 'efemeride';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -505,12 +506,13 @@ export interface ApiEfemerideEfemeride extends Struct.CollectionTypeSchema {
 export interface ApiGeneroGenero extends Struct.CollectionTypeSchema {
   collectionName: 'generos';
   info: {
+    description: '';
     displayName: 'genero';
     pluralName: 'generos';
     singularName: 'genero';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -571,7 +573,7 @@ export interface ApiKpiKpi extends Struct.CollectionTypeSchema {
     singularName: 'kpi';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -599,7 +601,7 @@ export interface ApiLibrarybookLibrarybook extends Struct.CollectionTypeSchema {
     singularName: 'librarybook';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     author: Schema.Attribute.String;
@@ -638,7 +640,7 @@ export interface ApiLugarLugar extends Struct.CollectionTypeSchema {
     singularName: 'lugar';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -663,7 +665,7 @@ export interface ApiPersonajePersonaje extends Struct.CollectionTypeSchema {
     singularName: 'personaje';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -691,7 +693,7 @@ export interface ApiProposalProposal extends Struct.CollectionTypeSchema {
     singularName: 'proposal';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -722,7 +724,7 @@ export interface ApiProposalrandomProposalrandom
     singularName: 'proposalrandom';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -813,7 +815,7 @@ export interface ApiRelatoDetalleRelatoDetalle
     singularName: 'relato-detalle';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -842,7 +844,7 @@ export interface ApiRelatoRelato extends Struct.CollectionTypeSchema {
     singularName: 'relato';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     author: Schema.Attribute.String;
@@ -877,7 +879,7 @@ export interface ApiSustantivoSustantivo extends Struct.CollectionTypeSchema {
     singularName: 'sustantivo';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -905,7 +907,7 @@ export interface ApiTemaTema extends Struct.CollectionTypeSchema {
     singularName: 'tema';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -930,7 +932,7 @@ export interface ApiWordWord extends Struct.CollectionTypeSchema {
     singularName: 'word';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
