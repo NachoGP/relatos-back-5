@@ -757,7 +757,7 @@ export interface ApiRandomwordDoRandomwordDo
     singularName: 'randomword-do';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -786,7 +786,7 @@ export interface ApiRandomwordRandomword extends Struct.CollectionTypeSchema {
     singularName: 'randomword';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -865,6 +865,37 @@ export interface ApiRelatoRelato extends Struct.CollectionTypeSchema {
     proposal: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSingularcharacterSingularcharacter
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'singularcharacters';
+  info: {
+    description: '';
+    displayName: 'singularcharacter';
+    pluralName: 'singularcharacters';
+    singularName: 'singularcharacter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::singularcharacter.singularcharacter'
+    > &
+      Schema.Attribute.Private;
+    personaje: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    tagline: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1477,6 +1508,7 @@ declare module '@strapi/strapi' {
       'api::randomword.randomword': ApiRandomwordRandomword;
       'api::relato-detalle.relato-detalle': ApiRelatoDetalleRelatoDetalle;
       'api::relato.relato': ApiRelatoRelato;
+      'api::singularcharacter.singularcharacter': ApiSingularcharacterSingularcharacter;
       'api::sustantivo.sustantivo': ApiSustantivoSustantivo;
       'api::tema.tema': ApiTemaTema;
       'api::word.word': ApiWordWord;

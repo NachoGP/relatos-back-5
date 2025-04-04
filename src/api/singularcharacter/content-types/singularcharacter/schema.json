@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "singularcharacters",
+  "info": {
+    "singularName": "singularcharacter",
+    "pluralName": "singularcharacters",
+    "displayName": "singularcharacter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "personaje": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    }
+  }
+}
