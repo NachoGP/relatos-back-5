@@ -471,6 +471,42 @@ export interface ApiBook25Book25 extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBook26Book26 extends Struct.CollectionTypeSchema {
+  collectionName: 'book26s';
+  info: {
+    displayName: 'Book26';
+    pluralName: 'book26s';
+    singularName: 'book26';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    editorial: Schema.Attribute.String;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::book26.book26'
+    > &
+      Schema.Attribute.Private;
+    propuestopor: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEfemerideEfemeride extends Struct.CollectionTypeSchema {
   collectionName: 'efemerides';
   info: {
@@ -1499,6 +1535,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::book.book': ApiBookBook;
       'api::book25.book25': ApiBook25Book25;
+      'api::book26.book26': ApiBook26Book26;
       'api::efemeride.efemeride': ApiEfemerideEfemeride;
       'api::genero.genero': ApiGeneroGenero;
       'api::global.global': ApiGlobalGlobal;
