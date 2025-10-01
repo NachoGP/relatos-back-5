@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "monthlywriters",
+  "info": {
+    "singularName": "monthlywriter",
+    "pluralName": "monthlywriters",
+    "displayName": "Monthlywriter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "writername": {
+      "type": "string"
+    },
+    "month": {
+      "type": "date"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "references": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    }
+  }
+}

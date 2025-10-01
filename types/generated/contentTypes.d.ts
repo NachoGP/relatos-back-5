@@ -693,6 +693,43 @@ export interface ApiLugarLugar extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMonthlywriterMonthlywriter
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'monthlywriters';
+  info: {
+    description: '';
+    displayName: 'Monthlywriter';
+    pluralName: 'monthlywriters';
+    singularName: 'monthlywriter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    info: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::monthlywriter.monthlywriter'
+    > &
+      Schema.Attribute.Private;
+    month: Schema.Attribute.Date;
+    publishedAt: Schema.Attribute.DateTime;
+    references: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    writername: Schema.Attribute.String;
+  };
+}
+
 export interface ApiPersonajePersonaje extends Struct.CollectionTypeSchema {
   collectionName: 'personajes';
   info: {
@@ -1542,6 +1579,7 @@ declare module '@strapi/strapi' {
       'api::kpi.kpi': ApiKpiKpi;
       'api::librarybook.librarybook': ApiLibrarybookLibrarybook;
       'api::lugar.lugar': ApiLugarLugar;
+      'api::monthlywriter.monthlywriter': ApiMonthlywriterMonthlywriter;
       'api::personaje.personaje': ApiPersonajePersonaje;
       'api::proposal.proposal': ApiProposalProposal;
       'api::proposalrandom.proposalrandom': ApiProposalrandomProposalrandom;
