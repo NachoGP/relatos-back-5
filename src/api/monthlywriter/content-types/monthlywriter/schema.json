@@ -34,6 +34,12 @@
     },
     "info": {
       "type": "string"
+    },
+    "references2": {
+      "type": "string"
+    },
+    "references3": {
+      "type": "string"
     }
   }
 }

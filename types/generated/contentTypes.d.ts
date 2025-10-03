@@ -664,6 +664,10 @@ export interface ApiLibrarybookLibrarybook extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     year: Schema.Attribute.Integer;
   };
 }
@@ -723,6 +727,8 @@ export interface ApiMonthlywriterMonthlywriter
     month: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     references: Schema.Attribute.String;
+    references2: Schema.Attribute.String;
+    references3: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
